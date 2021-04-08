@@ -1,5 +1,6 @@
 // Exercicio9_BuscaLarguara.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
+
+//Referências para desenvolvimento do código: https://www.youtube.com/watch?v=DYLfrmHHAm0&list=PL8eBmR3QtPL13Dkn5eEfmG9TmzPpTp0cV&index=70
 
 #include <iostream>
 #include <vector>
@@ -12,9 +13,9 @@ class Grafo {
     bool* busca;
 
 public:
-    Grafo(int vertice); //contrutor do grafo que vai receber o número de vertices
+    Grafo(int vertice); //construtor do grafo que vai receber o número de vertices
     void add_arestas(int vertice1, int vertice2); //adiciona uma aresta ligando vertice1 ao vertice2
-    bool verifica_adj(int vertice1, int vertice2); //verifica se vertice2 é vizinho de vertice2
+    bool verifica_adj(int vertice1, int vertice2); //verifica se vertice2 é vizinho de vertice1
     void Busca_Largura(int vertice_inicio); //função que faz a busca em largura no grafo e retorna os vertices na ordem em que foram visitados
 };
 
@@ -72,9 +73,10 @@ void Grafo::Busca_Largura(int vertice_inicio)
 
 int main()
 {
-    int Vert_inicio = 7;
-
-    Grafo grafo(Vert_inicio); //criando um grafo de 5 vertices com os vértices {1,2,3,4,5}, consequentemente cria 5 listas de adjacencia
+    int num_vertice = 7;
+    int vertice_inicio = 4;
+    
+    Grafo grafo(num_vertice); //criando um grafo de 7 vertices com os vértices {0,1,2,3,4,5,6}, consequentemente cria 7 listas de adjacencia
     
     grafo.add_arestas(0, 1);
     grafo.add_arestas(0, 4);
@@ -87,7 +89,7 @@ int main()
     grafo.add_arestas(4, 5);
     grafo.add_arestas(5, 6);
 
-    grafo.Busca_Largura(4); //Faz a BSF com inicio no vértice 3
+    grafo.Busca_Largura(vertice_inicio); //Faz a BSF com inicio no vértice 3
     
     int v1, v2;
     v1 = 1;

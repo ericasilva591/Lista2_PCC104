@@ -1,5 +1,6 @@
 // Exercicio10_BuscaProfundidade.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
+
+// Referências para desenvolvimento do código: https://www.youtube.com/watch?v=QLuzO37HyJI&t=626s
 
 #include <iostream>
 #include <vector>
@@ -13,10 +14,10 @@ class Grafo {
     bool* busca;
 
 public:
-    Grafo(int numvertice); //contrutor do grafo que vai receber o número de vertices
+    Grafo(int numvertice); //construtor do grafo que vai receber o número de vertices
     void add_arestas(int vertice1, int vertice2); //adiciona uma aresta ligando vertice1 ao vertice2
-    bool verifica_adj(int vertice1, int vertice2); //verifica se vertice2 é vizinho de vertice2
-    void Busca_Profundidade(int vertice_inicio); //função que faz a busca em largura no grafo e retorna os vertices na ordem em que foram visitados
+    bool verifica_adj(int vertice1, int vertice2); //verifica se vertice2 é vizinho de vertice1
+    void Busca_Profundidade(int vertice_inicio); //função que faz a busca em profundidade no grafo e retorna os vertices na ordem em que foram visitados
 };
 
 Grafo::Grafo(int vertice)
@@ -63,7 +64,7 @@ void Grafo::Busca_Profundidade(int vertice_inicio)
             if (!busca[*i])// se existe algum vertice adijacente de vertice_inicio que ainda não foi visitado
             {
                 achou = true;// a flag vai mudar de status, 
-                break;//o loop de busca vai ser interrompido
+                break;//o loop de busca nos vetores de adj de vertice_inicio vai ser interrompido para que o vertice *i seja explorado
             }
         }
         if (achou) { vertice_inicio = *i; } // vertice_inicio vai ser atualizado para a busca de profundidade ser realizada
@@ -81,7 +82,7 @@ int main()
     int numVertice = 7;
     int vertice_inicial = 4;
 
-    Grafo grafo(numVertice); //criando um grafo de 7 vertices com os vértices {0,1,2,3,4,5,6}, consequentemente cria 5 listas de adjacencia
+    Grafo grafo(numVertice); //criando um grafo de 7 vertices com os vértices {0,1,2,3,4,5,6}, consequentemente cria 7 listas de adjacencia
     grafo.add_arestas(0, 1);
     grafo.add_arestas(0, 4);
     grafo.add_arestas(0, 2);
