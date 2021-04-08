@@ -1,5 +1,6 @@
 // Exercicio10_BuscaProfundidade.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
+
+// Referências para desenvolvimento do código: https://www.youtube.com/watch?v=QLuzO37HyJI&t=626s
 
 #include <iostream>
 #include <vector>
