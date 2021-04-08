@@ -1,5 +1,6 @@
 // Exercicio9_BuscaLarguara.cpp : Este arquivo contém a função 'main'. A execução do programa começa e termina ali.
-//
+
+//Referências para desenvolvimento do código: https://www.youtube.com/watch?v=DYLfrmHHAm0&list=PL8eBmR3QtPL13Dkn5eEfmG9TmzPpTp0cV&index=70
 
 #include <iostream>
 #include <vector>
