@@ -53,7 +53,7 @@ int knapsack(int max_peso, int numitens, std::vector<int> w, std::vector<int> v)
 
 int main()
 {
-    std::vector<int> w{ 2,4,5,6,6 }, v{ 23,56,78,12,50 };
+    std::vector<int> w{ 2,4,5,6,6 }, v{ 23,56,78,12,50 };//limitado a 16 itens
     int peso_max = 20;
     int num_itens = w.size();
 
