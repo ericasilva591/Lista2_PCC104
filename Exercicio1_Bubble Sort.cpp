@@ -6,15 +6,10 @@
 #include <vector>
 
 template <typename T>
-void imprime_vetor(std::vector<T>& V) //recebe um vetor de qualquer tipo e altera a referencia dele(&) 
-{
-    for (int k = 0; k < size(V); k++)
-    {
-        if (k == size(V) - 1) { std::cout << V[k] << ";"; }
-        else { std::cout << V[k] << ", "; }
-
+void imprime_vetor(std::vector<T>& v) {//função para imprimir um vetor
+    for (auto i = v.begin(); i != v.end(); i++) {
+        std::cout << *i << " ";
     }
-    std::cout << std::endl;
 }
 
 template <typename T>
