@@ -28,6 +28,7 @@ void perm(std::vector<int>& ca, std::vector<int>& v, std::vector<std::vector<int
             soma += d[ca[i]][ca[i + 1]];//soma das distancias escolhendo o caminho atual
             //Exemplo: ca = {2,1,3,0,4} -> soma(i=0) = d[ca[0]][ca[1]] = d[2][1] = 8
         }
+        soma += d[ca[ca.size()-1]][ca[0]]; // soma o retorno da ultima cidade para a cidade de inicio
         std::cout << "Distancia passando pelo caminho ";
         print_vector(ca);
         std::cout << " eh igual a: " << soma << std::endl;
