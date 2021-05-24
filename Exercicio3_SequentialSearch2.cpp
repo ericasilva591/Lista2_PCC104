@@ -5,27 +5,54 @@
 #include <vector>
 
 template <typename T>
-void imprime_vetor(std::vector<T>& v) {//função para imprimir um vetor
-    for (auto i = v.begin(); i != v.end(); i++) {
-        std::cout << *i << " ";
+void imprime_vetor(std::vector<T>& V) //recebe um vetor de qualquer tipo e altera a referencia dele(&) 
+{
+    for (int k = 0; k < size(V); k++)
+    {
+        if (k == size(V) - 1) { std::cout << V[k] << ";"; }
+        else { std::cout << V[k] << ", "; }
+
     }
+    std::cout << std::endl;
 }
 
 template <typename T>
-void sequential_search(std::vector<T> V, T senha)
+void sequential_search(std::vector<T>& v, T senha)
 {
+    int n = v.size();
     v.push_back(senha);
     int i = 0;
     while (v[i] != senha) // compara uma senha com os elementos do vetor e retorna a posição em que a senha se encontra
     {
         i++;
     }
-    if (i < v.size())
+    if (i < n)
     {
-        std::cout << "Senha encontrada na posicao:" << i;
+        std::cout << "Senha encontrada na posicao:" << i << std::endl;
     }
     else
-        std::cout << "Senha nao encontrada";
+        std::cout << "Senha nao encontrada" << std::endl;
+
+    v.pop_back();
+}
+
+template <typename T>
+void sequential_search2(std::vector<T>& v, T senha)
+{
+    bool find = false;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == senha) {
+            std::cout << "Senha encontrada na posicao:" << i << std::endl;
+            find = true;
+        }
+        else continue;
+    }
+    if (!find) {
+        std::cout << "Senha nao encontrada" << std::endl;
+    }
+}
+
+
 
 int main()
 {
@@ -45,6 +72,8 @@ int main()
     std::cout << "Arranjo de senhas:";
     imprime_vetor(vetor_senhas);
     sequential_search(vetor_senhas, senha);
+
+    sequential_search2(vetor_senhas, senha);
 
    
 }
