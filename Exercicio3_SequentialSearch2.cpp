@@ -14,18 +14,18 @@ void imprime_vetor(std::vector<T>& v) {//função para imprimir um vetor
 template <typename T>
 void sequential_search(std::vector<T> V, T senha)
 {
+    v.push_back(senha);
     int i = 0;
-    while (V[i] != senha) // compara uma senha com os elementos do vetor e retorna a posição em que a senha se encontra
+    while (v[i] != senha) // compara uma senha com os elementos do vetor e retorna a posição em que a senha se encontra
     {
         i++;
     }
-    if (i < 10)
+    if (i < v.size())
     {
-        std::cout << "Senha encontrada na posicao:" << i+1;
+        std::cout << "Senha encontrada na posicao:" << i;
     }
     else
-        std::cout << "Senha nao encontrada";;
-}
+        std::cout << "Senha nao encontrada";
 
 int main()
 {
